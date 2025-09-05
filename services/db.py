@@ -1,5 +1,5 @@
 import sqlite3, random, datetime
-from models import Book
+from models.Books import Book
 
 
 books = [
@@ -29,5 +29,18 @@ books = [
 ]
 
 
-def insert():
-    pass
+def insert(book):
+    try:
+        conn=sqlite3.connect('books.db')
+        cur=conn.cursor()
+        cur.execute("INSERT INTO books VALUES (?,?,?,?)",(
+            book.id,
+            book.available,
+            book.title,
+            book.timestamp
+        ))
+        conn.commit()
+        conn.close()
+        return "Datos insertados correctamente"
+    except:
+        return "Error al insertar datos"
