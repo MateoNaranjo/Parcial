@@ -1,12 +1,33 @@
-import sqlite3
+import sqlite3, random, datetime
+from models import Book
 
 
-books =[
-    {'title': '1984', 'author': 'George Orwell', 'read': True},
-    {'title': 'el principito', 'author': 'George Orwell', 'read': True},
-    {'title': '100 años de soledad', 'author': 'George Orwell', 'read': True},
-    {'title': 'la importancia de morir a tiempo', 'author': 'George Orwell', 'read': True},
+books = [
+    
+    {
+        'available':True,
+        'title':'Don Quijote',
+        'timestamp':datetime.datetime.now()
+    },
+    
+    {
+        'available':True,
+        'title':'El principito',
+        'timestamp':datetime.datetime.now()
+    },
+    
+     {
+        'available':True,
+        'title':'Harry Potter y la camara de los secretos',
+        'timestamp':datetime.datetime.now()
+    },
+      {
+        'available':True,
+        'title':'El Hobbit',
+        'timestamp':datetime.datetime.now()
+    },
 ]
+
 
 def insert():
     pass
